@@ -1,0 +1,29 @@
+name: Integration Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for artifact to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          checkName: artifact
+
+      - uses: actions/checkout@master
+
+      - name: Self test
+        id: selftest
+
+        # Put your action repo here
+        uses: ./
+        with:
+          artifact_name: "${{ github.sha }}"
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          rename: foobar
+
+      - name: Check outputs
+        run: |
+          test "${{ steps.selftest.outputs.success }}" == "Artifact downloaded: ${{ github.sha }}"
+          test -f foobar

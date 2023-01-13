@@ -1,0 +1,11 @@
+name: Artifact Upload
+on: [push]
+jobs:
+  artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/upload-artifact@v2
+        with:
+          name: "${{ github.sha }}"
+          path: action.yml
