@@ -6,20 +6,15 @@ For example, if your project key were `AB` then the following would be allowed
 
 ```
 AB-1  Initialize Project
+AB-1: Initialize Project
 ```
 
 However, the following examples would not be allowed
 
 ```
-aB-1 Initialize Project
-```
-
-```
+Ab-1 Initialize Project
 ab-1 Initialize Project
-```
-
-```
-Ab 1 Initialize Project
+AB 1 Initialize Project
 ```
 
 Valid Pull Request titles must also include a short description after the Issue Key. Therefore the following is not valid. 
@@ -28,11 +23,11 @@ Valid Pull Request titles must also include a short description after the Issue 
 AB-1
 ```
 
-By default, this action will allow any valid Issue Key so long as it *could* be valid. If you want to be specific to your project, use the `projectKey` input for the action. 
+By default, this action will allow any valid Issue Key so long as it *could* be valid. If you want to be specific to your project, use the `project_key` input for the action. 
 
 ## Inputs
 
-### `projectKey`
+### `project_key`
 
 A specific Project Key to always check for. 
 
@@ -46,7 +41,7 @@ A specific Project Key to always check for.
 ## Example Usage with a specific Project Key
 
 ```
-- name: Enforce Jira Issue Key in Pull Request Title
+- name: Enforce PR Title Starts With Jira Issue Key
   uses: asafHalely/enforce-pr-title-style-action@v1
   with:
     projectKey: AB

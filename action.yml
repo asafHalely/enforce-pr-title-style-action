@@ -2,7 +2,7 @@ name: Enforce PR Title Starts With Jira Issue Key
 description: Check that a PR title starts with a Jira Issue Key
 author: 'Asaf Halely'
 inputs:
-  projectKey:
+  project_key:
     description: 'A specific Jira Project Key that must be included.'
     required: false
 runs:
