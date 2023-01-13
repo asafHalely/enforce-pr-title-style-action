@@ -1,5 +1,7 @@
 import os
-from actions_toolkit import github
+from actions_toolkit.github import Context
+
+context = Context()
 
 PK = os.environ["projectKey"]
 # REPO = os.getenv("INPUT_REPO") or os.getenv("GITHUB_REPOSITORY")
@@ -17,10 +19,10 @@ def getRegex():
 
 if __name__ == "__main__":
     print(f"Starting PR Title check for Jira Issue Key")
-    if github.context.payload.pull_request == None or github.context.payload.pull_request.title == None :
+    if context.payload.pull_request == None or context.payload.pull_request.title == None :
         print(f"This action should only be run with Pull Request Events")
         exit(1)
-    title = github.context.payload.pull_request.title
+    title = context.payload.pull_request.title
     print(title)
 
 
