@@ -17,4 +17,4 @@ jobs:
         # Put your action repo here
         uses: ./
         with:
-          projectKey: test
+          project_key: test

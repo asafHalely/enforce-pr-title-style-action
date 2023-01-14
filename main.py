@@ -3,7 +3,7 @@ from actions_toolkit.github import Context
 
 context = Context()
 
-PK = os.environ.get("projectKey")
+PK = os.environ.get("project_key")
 # REPO = os.getenv("INPUT_REPO") or os.getenv("GITHUB_REPOSITORY")
 
 # artifacts_url = f"https://api.github.com/repos/{REPO}/actions/artifacts"
