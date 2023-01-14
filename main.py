@@ -1,6 +1,5 @@
 import os
 from actions_toolkit.github import Context
-import json
 
 context = Context()
 
@@ -21,8 +20,7 @@ def getRegex():
 if __name__ == "__main__":
     print(f"Starting PR Title check for Jira Issue Key")
     print(context.payload)
-    json_payload = json.loads(context.payload)
-    pull_request = json_payload.get("pull_request")
+    pull_request = context.payload.get("pull_request")
     print(pull_request)
     print(pull_request.title)
     if context.payload.pull_request == None or context.payload.pull_request.title == None :
