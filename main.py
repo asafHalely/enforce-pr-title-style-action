@@ -3,7 +3,7 @@ from actions_toolkit.github import Context
 
 context = Context()
 
-# PK = os.environ["projectKey"]
+PK = os.environ.get("projectKey")
 # REPO = os.getenv("INPUT_REPO") or os.getenv("GITHUB_REPOSITORY")
 
 # artifacts_url = f"https://api.github.com/repos/{REPO}/actions/artifacts"
@@ -13,8 +13,8 @@ context = Context()
 # }
 
 def getRegex():
-    # if PK != None:
-    #     return "(^${projectKey}-){1}(\\d+):?(\\s+)(.+)"
+    if PK != None:
+        return "(^${projectKey}-){1}(\\d+):?(\\s+)(.+)"
     return "/(?<=^|[a-z]\-|[\s\p{Punct}&&[^\-]])([A-Z][A-Z0-9_]*-\d+)(?![^\W_])(\s)+(.)+/"
 
 if __name__ == "__main__":
