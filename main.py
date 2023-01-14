@@ -19,6 +19,7 @@ def getRegex():
 
 if __name__ == "__main__":
     print(f"Starting PR Title check for Jira Issue Key")
+    print(context.payload)
     print(context.payload.pull_request)
     print(context.payload.pull_request.title)
     if context.payload.pull_request == None or context.payload.pull_request.title == None :
