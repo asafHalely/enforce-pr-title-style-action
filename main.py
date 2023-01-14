@@ -6,11 +6,11 @@ context = Context()
 # PK = os.environ["projectKey"]
 # REPO = os.getenv("INPUT_REPO") or os.getenv("GITHUB_REPOSITORY")
 
-artifacts_url = f"https://api.github.com/repos/{REPO}/actions/artifacts"
-headers = {
-    "Authorization": f"token {TOKEN}",
-    "User-Agent": "Python",
-}
+# artifacts_url = f"https://api.github.com/repos/{REPO}/actions/artifacts"
+# headers = {
+#     "Authorization": f"token {TOKEN}",
+#     "User-Agent": "Python",
+# }
 
 def getRegex():
     # if PK != None:
