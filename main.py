@@ -1,5 +1,6 @@
 import os
 from actions_toolkit.github import Context
+import json
 
 context = Context()
 
@@ -20,9 +21,10 @@ def getRegex():
 if __name__ == "__main__":
     print(f"Starting PR Title check for Jira Issue Key")
     print(context.payload)
-    
-    print(context.payload.pull_request)
-    print(context.payload.pull_request.title)
+    json_payload = json.loads(context.payload)
+    pull_request = json_payload.get("pull_request")
+    print(pull_request)
+    print(pull_request.title)
     if context.payload.pull_request == None or context.payload.pull_request.title == None :
         print(f"This action should only be run with Pull Request Events")
         exit(1)
