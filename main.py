@@ -20,11 +20,11 @@ def getRegex():
 if __name__ == "__main__":
     print(f"Starting PR Title check for Jira Issue Key")
     # print(context.payload)
-    title = context.payload.get("pull_request").get("title")
-    print(title)
     if context.payload.get("pull_request") == None or context.payload.get("pull_request").get("title") == None :
         print(f"This action should only be run with Pull Request Events")
         exit(1)
+    title = context.payload.get("pull_request").get("title")
+    print(title)
     title = context.payload.pull_request.title
     print(title)
 
