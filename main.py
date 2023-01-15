@@ -9,7 +9,7 @@ PK = os.environ.get("INPUT_PROJECT_KEY")
 
 def getRegex():
     if PK is not None:
-        return r'^{PK}-\d+:? +\S'
+        return rf'^{PK}-\d+:? +\S'
     return r'^[A-Z]+-\d+:? +\S'
 
 
