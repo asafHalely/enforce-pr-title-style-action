@@ -1,9 +1,5 @@
 name: Integration Test
 on:
-  push:
-    branches:
-      - 'main'
-      # - 'test'
   pull_request:
     branches:
       - 'main'
@@ -17,4 +13,4 @@ jobs:
         # Put your action repo here
         uses: ./
         with:
-          project_key: test
+          project_key: AB
