@@ -44,5 +44,5 @@ A specific Project Key to always check for.
 - name: Enforce PR Title Starts With Jira Issue Key
   uses: asafHalely/enforce-pr-title-style-action@v1
   with:
-    projectKey: AB
+    project_key: AB
 ```
