@@ -6,4 +6,4 @@ RUN pip3 install -r requirement.txt
 
 ADD . .
 
-CMD ["python3","/app/main.py"]
+ENTRYPOINT ["python3","/app/main.py"]
