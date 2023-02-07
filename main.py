@@ -10,7 +10,7 @@ PK = os.environ.get("INPUT_PROJECT_KEY")
 def getRegex():
     if PK is not None:
         return rf'^{PK}-\d+:? +\S'
-    return r'^[A-Z]+-\d+:? +\S'
+    return r'^[0-9A-Z]+-\d+:? +\S'
 
 
 def checkTitle(title):
